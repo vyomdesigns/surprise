@@ -1,0 +1,226 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero{
+    position:relative;
+    height:200vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(35%);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.3);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    padding:20px;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:15px 32px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:black;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+}
+
+.couple-section,
+.solo-section,
+.video-section,
+.letter-section,
+.ending{
+    padding:90px 8%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:3rem;
+    font-family:'Great Vibes',cursive;
+}
+
+.couple-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.memory-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+}
+
+.memory-card img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.memory-card:hover img{
+    transform:scale(1.05);
+}
+
+.caption{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:20px;
+    background:linear-gradient(transparent,rgba(0,0,0,0.8));
+}
+
+.large{
+    grid-row:span 2;
+}
+
+.solo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.solo-card{
+    background:#1a1a1a;
+    border-radius:22px;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.solo-card:hover{
+    transform:translateY(-8px);
+}
+
+.solo-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.solo-card p{
+    padding:18px;
+    text-align:center;
+}
+
+.video-section{
+    text-align:center;
+}
+
+video{
+    width:90%;
+    max-width:850px;
+    border-radius:25px;
+}
+
+.letter-section{
+    display:flex;
+    justify-content:center;
+}
+
+.letter-box{
+    max-width:900px;
+    background:#181818;
+    padding:60px;
+    border-radius:30px;
+    line-height:2;
+}
+
+.signature{
+    margin-top:30px;
+    font-family:'Great Vibes',cursive;
+    font-size:2.2rem;
+}
+
+.ending{
+    text-align:center;
+}
+
+.ending-image{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:30px;
+    border:5px solid rgba(255,255,255,0.2);
+}
+
+.floating-hearts::before,
+.floating-hearts::after{
+    content:'❤️';
+    position:fixed;
+    font-size:22px;
+    animation:float 8s linear infinite;
+    opacity:0.5;
+}
+
+.floating-hearts::after{
+    left:85%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+    }
+
+    100%{
+        transform:translateY(-100vh);
+    }
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .large{
+        grid-row:auto;
+    }
+
+    .letter-box{
+        padding:35px;
+    }
+}
